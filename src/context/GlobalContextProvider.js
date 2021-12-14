@@ -3,7 +3,7 @@ import GlobalContext from './GlobalContext';
 
 
 const GlobalcontextProvider = ({ children }) => {
-  const [nameData, setNameData] = useState('Joe');
+  const [nameData, setNameData] = useState('Webinage');
     const showMyName = (name) => {
       alert(name);
     };

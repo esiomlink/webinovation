@@ -1,4 +1,6 @@
-import React, { useReducer, useCallback, useMemo } from 'react';
+import React, { useReducer, useCallback } from 'react';
+import { Button } from 'react-bootstrap';
+
 import { reducer } from '../reducer/reducer.js';
 
 const Intermediathooks = () => {
@@ -11,10 +13,28 @@ const Intermediathooks = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <>
-      Count: {state.count}
-      <button onClick={handleClick}>Say Hello</button>
-      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
-      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+      <div className="container">
+        <div>
+          <h1>Count: {state.count}</h1>
+        </div>
+        <div>
+          <Button variant='warning' onClick={handleClick}>
+            Say Hello
+          </Button>
+        </div>
+        <Button
+          variant='primary'
+          onClick={() => dispatch({ type: 'decrement' })}
+        >
+          -
+        </Button>
+        <Button
+          variant='danger'
+          onClick={() => dispatch({ type: 'increment' })}
+        >
+          +
+        </Button>
+      </div>
     </>
   );
 };
