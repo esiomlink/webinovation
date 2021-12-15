@@ -3,25 +3,32 @@ import GlobalContext from './GlobalContext';
 
 
 const GlobalcontextProvider = ({ children }) => {
-  const [nameData, setNameData] = useState('Webinage');
-    const showMyName = (name) => {
-      alert(name);
-    };
-    const alterMyName = () => {
-      const name = ['Armand', 'Paul', 'lucie', 'Martine'];
-      setNameData(name[getRandomInt(name.length)]);
-    };
+  const [name, setName] = useState('Webinage');
 
-    const getRandomInt = (max) => {
-      return Math.floor(Math.random() * max);
-    };
+  /** Public **/
+  const showMyName = (name) => {
+    alert(name);
+  };
+
+  /** Public **/
+  const alterMyName = () => {
+    const names = ['Armand', 'Paul', 'lucie', 'Martine'];
+    setName(names[getRandomInt(names.length)]);
+    showMyName(name);
+  };
+
+  /** Private **/
+  const getRandomInt = (max) => {
+    return Math.floor(Math.random() * max);
+  };
+
   return (
     <div>
       <GlobalContext.Provider
         value={{
-          nameData,
+          name,
           showMyName,
-          setNameData,
+          setName,
           alterMyName,
         }}
       >

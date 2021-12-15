@@ -3,41 +3,57 @@ import GlobalContext from '../context/GlobalContext';
 import { Button } from 'react-bootstrap';
 
 const BasicHooks = () => {
-  const { nameData, showMyName, alterMyName } = useContext(GlobalContext);
-
+  
+  
   const [myState, setMyState] = useState(0);
-
+  
   const counterUp = () => {
     setMyState(myState + 1);
   };
-  const counterUDown = () => {
+  const counterDown = () => {
     setMyState(myState - 1);
   };
-
-  /*   useEffect(() => {
-   alert('Bonjour à tous');
-  }, []); */
-
+  
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
     document.title = `Compteur: ${myState}`;
   }, [myState]);
+  
+  /*   useEffect(() => {
+    alert('Bonjour à tous');
+  }, []); */
+  
+  
+  
+  const { name, showMyName, alterMyName } = useContext(GlobalContext);
 
   return (
     <>
-      <div className='container'> 
+      <div className='container'>
         <div>
           <h1>Count: {myState}</h1>
         </div>
         <div>
-        <Button onClick={() => counterUp()}>+</Button>
-        <Button onClick={() => counterUDown()}>-</Button>
+          <Button className='button' onClick={() => counterUp()}>
+            +
+          </Button>
+          <Button className='button' onClick={() => counterDown()}>
+            -
+          </Button>
         </div>
         <div>
-          <Button variant='warning' onClick={() => showMyName(nameData)}>
+          <Button
+            className='button'
+            variant='warning'
+            onClick={() => showMyName(name)}
+          >
             Show my name
           </Button>
-          <Button variant='warning' onClick={() => alterMyName()}>
+          <Button
+            className='button'
+            variant='warning'
+            onClick={() => alterMyName()}
+          >
             Alter my name
           </Button>
         </div>

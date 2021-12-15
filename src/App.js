@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import BasicHooks from './components/BasicHooks'
 import Navigat from './components/Navigat';
+import End from './components/End';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path='basic' element={<BasicHooks />} />
             <Route path='inter' element={<Intermediathooks />} />
+            <Route path='end' element={<End />} />
           </Routes>
         </div>
       </GlobalcontextProvider>

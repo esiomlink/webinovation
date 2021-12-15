@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 1rem;
 }
 .nav {
   width: 100%;
@@ -39,4 +40,12 @@
   -webkit-animation: spin 1.5s linear infinite;
   -moz-animation: spin 1.5s linear infinite;
   animation: spin 1.5s linear infinite;
+}
+
+.button {
+  min-width: 10vh;
+  margin-top: 2rem;
+  font-weight: 900;
+  font-size: 28px;
+  margin-left: 1rem;
 }
